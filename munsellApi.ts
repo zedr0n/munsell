@@ -8,10 +8,10 @@ export class MunsellApi {
             return {
                 hexToMhvc: (
                     hex : string,
-                    rgbSpace : RGBSpace = munsell.SRGB,
                     threshold : number = 1e-6,
                     maxIteration : number = 200,
-                    factor : number = 5
+                    factor : number = 0.5,
+                    rgbSpace : RGBSpace = munsell.SRGB
                 ) => {
                     return munsell.hexToMhvc(hex, rgbSpace, threshold, maxIteration, undefined, factor);
                 },
@@ -27,10 +27,10 @@ export class MunsellApi {
                     r : number,
                     g : number,
                     b : number,
-                    rgbSpace : RGBSpace = munsell.SRGB,
                     threshold : number = 1e-6,
                     maxIteration : number = 200,
-                    factor : number = 5
+                    factor : number = 0.5,
+                    rgbSpace : RGBSpace = munsell.SRGB
                 ) => {
                     return munsell.rgbToMhvc(r, g, b, rgbSpace, threshold, maxIteration, undefined, factor)
                 },
